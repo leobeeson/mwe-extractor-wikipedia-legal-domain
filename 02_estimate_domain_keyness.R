@@ -184,7 +184,7 @@ system.time(
     # topic_parent <- mls_topic_taxonomy$parent_category[tolower(mls_topic_taxonomy$category) == topic_cat]
     topic_parent <- "UK Law"
     length <- str_count(keyness$feature, pattern = "_") + 1
-    client <- "Alchemy Machines"
+    client <- "Client XYZ"
     ontology <- "Law"
       
     keyness$topic <- topic_cat

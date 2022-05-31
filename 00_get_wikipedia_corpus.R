@@ -12,13 +12,6 @@ if("stringr" %in% installed.packages() == FALSE){
 }
 library(stringr)
 
-# if("readxl" %in% installed.packages() == FALSE){
-#   install.packages("readxl", repos="http://cran.us.r-project.org")
-# }
-# library(readxl)
-
-#library(tidyverse)
-
 if("WikipediR" %in% installed.packages() == FALSE){
   install.packages("WikipediR", repos="http://cran.us.r-project.org")
 }
@@ -35,16 +28,8 @@ source("resources/99_white_and_blacklists.R")
 quanteda_options(threads = (RcppParallel::defaultNumThreads() - 1))
 cat(paste0("Quanteda using ", quanteda_options("threads"), " parallel processing threads.\nLeaving 1 available for you to browse for cat pictures while you wait..."))
 
+
 ##### PREPARE TAXONOMY DATA #####
-# subcats_taxonomy <- read_excel(path = "resources/marketing_domain_categories_degree3.xlsx", sheet = "Subcats_Taxonomy")
-# subcats_taxonomy$Subcategories <- paste(subcats_taxonomy$Actual_Subcategory, subcats_taxonomy$Subcats_Whitelist, sep = ", ")
-# subcats_taxonomy$Subcategories <- gsub(pattern = ", NA", replacement = "", x = subcats_taxonomy$Subcategories)
-# subcats_domain <- unlist(str_split(string = paste(subcats_taxonomy$Subcategories, collapse = ", "), pattern = ", "))
-
-# taxonomy_list <- as.list(subcats_taxonomy$Subcategories)
-# names(taxonomy_list) <- subcats_taxonomy$Renamed_Subcategory
-# taxonomy_list <- lapply(taxonomy_list, function(x) unlist(str_split(string = x, pattern = ", ")))
-
 # Initialize time stamps; they get reassigned a real time stamp when calling a function:
 t0 <- Sys.time()
 t1 <- Sys.time()
